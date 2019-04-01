@@ -1,5 +1,3 @@
-$(function(){
-})
 function login(){
     var res = check();
     if (res) {

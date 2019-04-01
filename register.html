@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="./css/area2.css">
 </head>
 <body>
-<p class="title">提交公司资料</p>
+<p class="title" id="title"></p>
 <form class="form1">
-    <input type="text" name="name" placeholder="请输入企业名称">
-    <input type="text" name="code" placeholder="请输入企业信用代码">
+    <input type="text" name="company_name" placeholder="请输入企业名称">
+    <input type="text" name="credit_code" placeholder="请输入企业信用代码">
     <!--选择地区弹层-->
     <div class="ui-form-item ui-border-b">
         <div class="ui-select">
@@ -25,7 +25,6 @@
         </div>
         <img src="./image/select.png" alt="" class="down">
         <div class="browser">
-
             <!--选择地区弹层-->
             <section id="areaLayer" class="express-area-box">
                 <header>
@@ -66,23 +65,22 @@
     </div>
     <input type="text" name="address" placeholder="请输入公司详细地址">
     <div class="hangyeWrap">
-        <select name="hangye">
-            <option value="1">A行业</option>
-            <option value="1">B行业</option>
+        <select name="industry" id="hangye">
         </select>
         <img src="./image/select.png" alt="" class="down">
     </div>
 </form>
 <div class="line"></div>
 <form class="form2">
-    <input type="text" name="account" placeholder="请输入企业账号">
+    <input type="text" name="code" placeholder="请输入企业账号">
     <input type="password" name="pwd" placeholder="请输入密码">
-    <input type="password" name="pwd2" placeholder="请再次输入密码">
+    <input type="password" name="very_pwd" placeholder="请再次输入密码">
     <button type="button" class="saveBtn" onclick="save()">提&nbsp;交</button>
     <p class="haveAccount">已有账号，<a href="./login.html">直接登录</a></p>
 </form>
 <script src="./js/jquery-3.3.1.min.js"></script>
 <script src="./js/jquery.area.js"></script>
+<script src="./config/config.js"></script>
 <script src="./js/register.js"></script>
 </body>
 </html>

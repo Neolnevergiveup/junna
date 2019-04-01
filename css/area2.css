@@ -44,7 +44,7 @@ h3, h4 {
     background: white;
 }
 .ui-border-b {
-    border-bottom: 1px solid #F0F0F0;
+    border: 1px solid #F0F0F0;
 }
 .ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio):not(.ui-radio-s) {
     width: 95px;

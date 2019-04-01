@@ -2,6 +2,7 @@
     font-size: .17rem;
     padding-left:.15rem;
     line-height: .5rem;
+    height: .5rem;
 }
 .container{
     background: #fff;
@@ -33,7 +34,6 @@ select{
     appearance:none;
     -moz-appearance:none;
     -webkit-appearance:none;
-    color: rgb(153,153,153);
 }
 .down{
     position: absolute;

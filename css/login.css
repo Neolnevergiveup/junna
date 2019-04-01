@@ -1,0 +1,75 @@
+.backWrap{
+    position: relative;
+    height: 2.76rem;
+}
+.loginBack{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2.76rem;
+}
+.logoImg{
+    position: absolute;
+    left: 50%;
+    top: 0.2rem;
+    -webkit-transform: translate(-50%);
+    -moz-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    -o-transform: translate(-50%);
+    transform: translate(-50%);
+    width: 1.855rem;
+    height: 2.065rem;
+}
+.appName{
+    position: absolute;
+    color: #fff;
+    font-size: 0.24rem;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    top: 2.15rem;
+}
+.container{
+    padding: 0 .25rem;
+}
+.account{
+    margin-top: 0.35rem;
+}
+.pwd{
+    margin-top: .25rem;
+}
+.account, .pwd{
+    width: 100%;
+    height: .54rem;
+    font-size: .15rem;
+    border-radius: .27rem;
+    border: .01rem solid #f2f2f2;
+    padding-left: .2rem;
+}
+.loginWrap{
+    position: fixed;
+    width: 100%;
+    padding: 0 .25rem;
+    left: 0;
+    bottom: .75rem;
+}
+.login{
+    width: 100%;
+    height: 0.54rem;
+    background: #77aafd;
+    color: #fff;
+    border-radius: 0.27rem;
+    border: 0;
+    font-size: .15rem;
+    margin-top: 0.55rem;
+}
+.register{
+    font-size: .15rem;
+    text-align: center;
+    color: rgb(102, 102, 102);
+    margin-top: .2rem;
+}
+.register a{
+    color: rgb(103, 136, 241);
+}

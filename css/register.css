@@ -1,0 +1,75 @@
+.title{
+    font-size: .17rem;
+    padding-left:.15rem;
+    line-height: .5rem;
+}
+.container{
+    background: #fff;
+    min-height: 200px;
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+}
+form{
+    margin: 0 .25rem;
+}
+input{
+    height: .44rem;
+    width: 100%;
+    border: .01rem solid #f2f2f2;
+    border-radius: .22rem;
+    padding-left: .2rem;
+    font-size: .15rem;
+    margin-bottom: .1rem;
+}
+select{
+    height: .44rem;
+    width: 100%;
+    border: .01rem solid #f2f2f2;
+    border-radius: .22rem;
+    padding-left: .2rem;
+    font-size: .15rem;
+    margin-bottom: .1rem;
+    background: #fff;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    color: rgb(153,153,153);
+}
+.down{
+    position: absolute;
+    right: 0.2rem;
+    width: .14rem;
+    height: .08rem;
+    top: .18rem;
+}
+.hangyeWrap{
+    position: relative;
+}
+.hangyeWrap select{
+    margin-bottom: 0;
+}
+.line{
+    height: .01rem;
+    background:rgb(242,242,242);
+    margin: .275rem 0 .35rem 0;
+}
+.saveBtn{
+    height: .54rem;
+    background: rgb(103, 136, 241);
+    width: 100%;
+    border: 0;
+    border-radius: .27rem;
+    color: #fff;
+    margin-top: .3rem;
+    font-size: .15rem;
+}
+.haveAccount{
+    text-align: center;
+    font-size: .15rem;
+    color: rgb(102, 102, 102);
+    margin-top: .2rem;
+}
+.haveAccount a{
+    color: rgb(103, 136, 241);
+    text-decoration: none;
+}

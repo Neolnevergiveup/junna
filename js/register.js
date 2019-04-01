@@ -36,20 +36,27 @@ function save(){
     })
     var str = $('#expressArea').val().ResetBlank();
     var cityList = str.split(' ');
-    var province1 = cityList[0];
-    var city1 = cityList[1];
-    var country1 = cityList[2];
+    var city1 = cityList[cityList.length-2];
+    var country1 = cityList[cityList.length-1];
+    if (cityList.length === 3) {
+        var province1 = cityList[0];
+    }
     Object.assign(params, {
         province: province1,
         city: city1,
         county: country1
     })
-    console.log(params)
     // 省市区手动切
     $.post(URL + "/buy/index/doregist", params, function(res, status){
         if ('success' == status) {
             if (res.code === 0) {
-                console.dir(res)
+                $('body').toast({
+                    content:'成功!',
+                    duration:2000,
+                });
+                setTimeout(function(){
+                    window.location.href = './login.html';
+                }, 2000)
             } else {
                 alert(res.msg)
             }

@@ -2,6 +2,24 @@ function login(){
     var res = check();
     if (res) {
         console.log('login')
+        $.post(URL + "/buy/index/login", {
+            code: $('.account').val(),
+            pwd: $('.pwd').val()
+        }, function(res, status){
+            if ('success' == status) {
+                if (res.code === 0) {
+                    $('body').toast({
+                        content:'成功!',
+                        duration:2000,
+                    });
+                    setTimeout(function(){
+                        window.location.href = './login.html';
+                    }, 2000)
+                } else {
+                    alert(res.msg)
+                }
+            }
+        });
     }
 }
 // 检查输入

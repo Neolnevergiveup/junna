@@ -11,6 +11,7 @@
 }
 html{
 	font-size: 96px;
+    height: 100%
 }
 body{
     font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
@@ -21,6 +22,7 @@ body{
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
     outline: 0;
+    height: 100%
 }
 div,ul,li{
 	padding: 0;

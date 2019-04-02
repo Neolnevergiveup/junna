@@ -37,6 +37,8 @@ function check(){
 $(function(){
     // 获取code
     const appid = 'wx679a63f8ef2a7591';
-    const url = window.location.href;
-    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+encodeURIComponent(url)+'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
+    // const url = window.location.href;
+    const url = '116.24.66.100';
+    console.log(url)
+    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+encodeURIComponent(url)+'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
 })

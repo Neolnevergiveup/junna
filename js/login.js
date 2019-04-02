@@ -34,3 +34,9 @@ function check(){
     }
     return true
 }
+$(function(){
+    // 获取code
+    const appid = 'wx679a63f8ef2a7591';
+    const url = window.location.href;
+    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+encodeURIComponent(url)+'&response_type=code&scope=SCOPE&state=STATE#wechat_redirect';
+})

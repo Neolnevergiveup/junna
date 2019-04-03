@@ -16,10 +16,7 @@ function login(){
                         window.location.href = './login.html';
                     }, 2000)
                 } else {
-                    $('body').toast({
-                        content:res.msg,
-                        duration:2000,
-                    });
+                    alert(res.msg)
                 }
             }
         });
@@ -28,31 +25,16 @@ function login(){
 // 检查输入
 function check(){
     if (!$('.account').val().trim()) {
-        $('body').toast({
-            content:'请输入企业账号',
-            duration:2000,
-        });
+        alert('请输入企业账号')
         return false
     }
     if (!$('.pwd').val().trim()) {
-        $('body').toast({
-            content:'请输入密码',
-            duration:2000,
-        });
+        alert('请输入密码')
         return false
     }
     return true
 }
-var windowHeight = 0
 $(function(){
-    windowHeight = document.body.clientHeight
-    window.onresize = function () {
-        if(document.body.clientHeight < windowHeight) {
-            $('.loginWrap').hide()
-        } else {
-            $('.loginWrap').show()
-        }
-    }
     // 获取code
     const appid = 'wx679a63f8ef2a7591';
     const url = window.location.href;

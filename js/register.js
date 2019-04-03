@@ -12,10 +12,16 @@ $(function(){
                     }
                     $('#hangye').html(innerHtml)
                 } else {
-                    alert(res.msg);
+                    $('body').toast({
+                        content:res.msg,
+                        duration:2000,
+                    });
                 }
             } else {
-                alert('请求行业列表失败')
+                $('body').toast({
+                    content:'请求行业列表失败',
+                    duration:2000,
+                });
             }
         });
     })()
@@ -58,8 +64,16 @@ function save(){
                     window.location.href = './login.html';
                 }, 2000)
             } else {
-                alert(res.msg)
+                $('body').toast({
+                    content:res.msg,
+                    duration:2000,
+                });
             }
         }
     });
+}
+// 跳转登录，因为公众号对两个页面的相互跳转次数有限制
+function jumpLogin(){
+    var timestamp = Date.parse(new Date());
+    window.location.href = './login.html?time=' + timestamp;
 }

@@ -67,7 +67,8 @@ select{
     text-align: center;
     font-size: .15rem;
     color: rgb(102, 102, 102);
-    margin-top: .2rem;
+    margin: .2rem 0;
+    line-height: .3rem;
 }
 .haveAccount a{
     color: rgb(103, 136, 241);

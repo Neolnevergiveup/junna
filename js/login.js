@@ -1,23 +1,20 @@
+var open_id = ''
 function login(){
     var res = check();
     if (res) {
         $.post(URL + "/buy/index/login", {
             code: $('.account').val(),
             pwd: $('.pwd').val(),
-            open_id: localStorage.open_id
+            open_id: open_id
         }, function(res, status){
-            if ('success' == status) {
-                if (res.code === 0) {
-                    $('body').toast({
-                        content:'成功!',
-                        duration:2000,
-                    });
-                } else {
-                    $('body').toast({
-                        content:res.msg,
-                        duration:2000,
-                    });
-                }
+            if (res.code === 0) {
+                localStorage.setItem('open_id', open_id)
+                window.location.href = './index.html';
+            } else {
+                $('body').toast({
+                    content:res.msg,
+                    duration:2000,
+                });
             }
         });
     }
@@ -47,12 +44,26 @@ function getUrlParam(name){
     if (r != null) return unescape(r[2])
     return null
 }
+// 得到code
+function getCode(){
+    const appid = 'wx679a63f8ef2a7591';
+    const url = window.location.href;
+    const code = getUrlParam('code');
+    if (code == null || code === '') {
+        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+encodeURIComponent(url)+'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
+    } else {
+        getOpenId(code)
+    }
+}
 // 由code获得openid
 function getOpenId(code){
     $.get(URL + "/buy/index/getOpenId?code=" + code,function(res,status){
         if ('success' == status) {
             if (res.code === 0) {
-                localStorage.setItem('open_id', res.data.open_id)
+                open_id = res.data.open_id;
+            } else if (res.code === 1 && res.msg.indexOf('40163')!=-1) {
+                // 每个code只能请求一次，如果在当前login页面刷新，会导致请求open_id失败,重定向到login，重新请求code
+                window.location.href = './login.html';
             } else {
                 $('body').toast({
                     content:res.msg,
@@ -68,13 +79,22 @@ function getOpenId(code){
     });
 }
 $(function(){
-    // 获取code
-    const appid = 'wx679a63f8ef2a7591';
-    const url = window.location.href;
-    const code = getUrlParam('code');
-    if (code == null || code === '') {
-        window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='+appid+'&redirect_uri='+encodeURIComponent(url)+'&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect';
-    } else {
-        getOpenId(code)
+    // 如果已经有open_id的缓存信息，说明曾经登录过，需要请求后台接口验证open_id当前登录状态；否则获取code，由code获取open_id
+    if (localStorage.open_id) {
+        // 检验当前open_id
+        $.get(URL + "/buy/index/lgcheck?open_id="+localStorage.open_id, function(res,status){
+            if ('success' == status) {
+                if (res.code === 0) {
+                    window.location.href = './index.html';
+                } else {
+                    localStorage.removeItem('open_id');
+                    getCode()
+                }
+            } else {
+                console.log('登录状态验证失败');
+            }
+        });
+    } else{
+        getCode()
     }
 })

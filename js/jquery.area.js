@@ -614,14 +614,14 @@ function selectD(p,c,d) {
 /*关闭省市区选项*/
 function clockArea() {
 	$("#areaMask").fadeOut();
-	$("#areaLayer").animate({"bottom": "-100%"});
+	$("#areaLayer").animate({"bottom": "-100%"}).fadeOut();;
 	intProvince(1);
 }
 
 	/*打开省市区选项*/
 	$("#expressArea").click(function() {
 		$("#areaMask").fadeIn();
-		$("#areaLayer").animate({"bottom": 0}).attr("flag","0");
+		$("#areaLayer").animate({"bottom": 0}).attr("flag","0").fadeIn();
 	});
 	$("#expressArea1").click(function() {
 		$("#areaMask").fadeIn();

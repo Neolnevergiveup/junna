@@ -1,0 +1,62 @@
+body{
+    background: #fff url('../image/buy_back.png') no-repeat left top;
+    background-size: 100% 2.8rem;
+    padding: 0 .15rem;
+}
+.title{
+    font-size: .15rem;
+    color: #fff;
+    line-height: .5rem;
+}
+.list{
+    background: #fff;
+    border-radius: .15rem;
+    -webkit-box-shadow: 0 6px 35px -6px #d1d1d1;
+    -moz-box-shadow: 0 6px 35px -6px #d1d1d1;
+    box-shadow: 0 6px 35px -6px #d1d1d1;
+}
+.every{
+    padding: 0 .2rem;
+    border-bottom: 1px solid rgb(242,242,242);
+}
+.every:last-child{
+    border: 0;
+}
+.every_title{
+    font-size: .21rem;
+    color: rgb(100,146,255);
+    padding: .3rem 0 .15rem 0;
+}
+.content{
+    line-height: .25rem;
+    padding-bottom: .3rem;
+}
+.count{
+    display: flex;
+    justify-content: space-between;
+    height: .5rem;
+    align-items: center;
+}
+.buyBtn,.inviteBtn{
+    height: .54rem;
+    width: 100%;
+    border-radius: .27rem;
+    line-height: .54rem;
+    font-size: .15rem;
+    text-align: center;
+}
+.buyBtn{
+    background: rgb(119,170,253);
+    color: #fff;
+    margin: .1rem 0 .2rem 0;
+}
+.inviteBtn{
+    margin-bottom: .3rem;
+    background: #fff;
+    color: rgb(84,149,255);
+    border: 1px solid rgb(119,170,253);
+}
+#expired{
+    text-align: center;
+    padding-bottom: .15rem;
+}

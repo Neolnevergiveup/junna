@@ -1,0 +1,42 @@
+body{
+    background: #fff url('../image/invite_back.png') no-repeat left top;
+    background-size: 100% 4.1rem;
+    padding: 0 .15rem;
+}
+.info{
+    color: #fff;
+    font-size: .15rem;
+    line-height: .25rem;
+    padding: .35rem 0 .2rem 0;
+}
+.codeWrap{
+    height: 3.4rem;
+    background: #fff;
+    border-radius: .15rem;
+    -webkit-box-shadow: 0 6px 35px -6px #d1d1d1;
+    -moz-box-shadow: 0 6px 35px -6px #d1d1d1;
+    box-shadow: 0 6px 35px -6px #d1d1d1;
+    padding-top: .3rem;
+}
+.code{
+    display: block;
+    width: 2.5rem;
+    height: 2.45rem;
+    margin: 0 auto;
+}
+.codeWrap>p{
+    color: rgb(119,170,253);
+    margin: .2rem 0;
+    text-align: center;
+    font-size: .15rem;
+}
+.saveBtn{
+    display: block;
+    height: .54rem;
+    border-radius: .27rem;
+    background: rgb(119,170,253);
+    color: #fff;
+    font-size: .15rem;
+    border: 0;
+    margin: .5rem 0;
+}

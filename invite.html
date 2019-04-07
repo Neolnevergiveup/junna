@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>已购买课程</title>
+    <title>分享</title>
     <!-- meta使用viewport以确保页面可自由缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -10,28 +10,18 @@
     <meta http-equiv="Expires" content="0" />
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/toast.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/invite.css">
 </head>
 <body>
-<p class="title">课程列表</p>
-<div class="list">
-    <div class="every">
-        <div class="every_title">安全法律法规</div>
-        <div class="content">课程简介</div>
-    </div>
+<p class="info">保存二维码到手机，分享给学员，学员微信扫描即可进入小程序学习、考试~</p>
+<div class="codeWrap">
+    <img src="./image/code.png" alt="" class="code">
+    <p>有效期3天</p>
 </div>
-<div class="count">
-    <p>已买份数：<span id="have_buy">0</span></p>
-    <p>学习人数：<span id="learn">0</span></p>
-    <p>通过人数：<span id="pass">0</span></p>
-</div>
-<div class="buyBtn">买&nbsp;课</div>
-<div class="inviteBtn" onclick="goInvite()">邀请学员</div>
-<p id="expired">账号有效期至：-</p>
+<button class="saveBtn">保存二维码到手机</button>
 <script src="./js/jquery-3.3.1.min.js"></script>
 <script src="./js/checkLogin.js"></script>
 <script src="./config/config.js"></script>
 <script src="./js/toast.js"></script>
-<script src="./js/index.js"></script>
 </body>
 </html>

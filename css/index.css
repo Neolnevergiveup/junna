@@ -51,12 +51,12 @@ body{
     margin: .1rem 0 .2rem 0;
 }
 .inviteBtn{
-    margin-bottom: .3rem;
+    margin-bottom: .2rem;
     background: #fff;
     color: rgb(84,149,255);
     border: 1px solid rgb(119,170,253);
 }
 #expired{
     text-align: center;
-    padding-bottom: .15rem;
+    padding-bottom: .2rem;
 }

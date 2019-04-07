@@ -32,3 +32,7 @@ function getData(){
         }
     });
 }
+// 前往邀请学员
+function goInvite(){
+    window.location.href = './invite.html';
+}

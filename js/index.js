@@ -36,3 +36,15 @@ function getData(){
 function goInvite(){
     window.location.href = './invite.html';
 }
+// 前往购买
+function goBuy(){
+    window.location.href = './buy.html';
+}
+// 退出登录
+function logout() {
+    var res = confirm('退出登录？');
+    if (res) {
+        localStorage.removeItem('open_id');
+        window.location.href = './login.html';
+    }
+}

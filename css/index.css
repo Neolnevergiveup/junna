@@ -4,9 +4,19 @@ body{
     padding: 0 .15rem;
 }
 .title{
+    position: relative;
     font-size: .15rem;
     color: #fff;
     line-height: .5rem;
+}
+.logout{
+    position: absolute;
+    width: .2rem;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: url('../image/logout.png') no-repeat center center;
+    background-size: .2rem;
 }
 .list{
     background: #fff;

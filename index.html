@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-<p class="title">课程列表</p>
+<p class="title">课程列表<i class="logout" onclick="logout()"></i></p>
 <div class="list">
     <div class="every">
         <div class="every_title">安全法律法规</div>
@@ -25,11 +25,11 @@
     <p>学习人数：<span id="learn">0</span></p>
     <p>通过人数：<span id="pass">0</span></p>
 </div>
-<div class="buyBtn">买&nbsp;课</div>
+<div class="buyBtn" onclick="goBuy()">买&nbsp;课</div>
 <div class="inviteBtn" onclick="goInvite()">邀请学员</div>
 <p id="expired">账号有效期至：-</p>
 <script src="./js/jquery-3.3.1.min.js"></script>
-<script src="./js/checkLogin.js"></script>
+<!--<script src="./js/checkLogin.js"></script>-->
 <script src="./config/config.js"></script>
 <script src="./js/toast.js"></script>
 <script src="./js/index.js"></script>

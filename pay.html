@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>分享</title>
+    <title>支付</title>
     <!-- meta使用viewport以确保页面可自由缩放 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
@@ -10,19 +10,24 @@
     <meta http-equiv="Expires" content="0" />
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/toast.css">
-    <link rel="stylesheet" href="./css/invite.css">
+    <link rel="stylesheet" href="./css/pay.css">
 </head>
 <body>
-<p class="info">保存二维码到手机，分享给学员，学员微信扫描即可进入小程序学习、考试~</p>
-<div class="codeWrap">
-    <img src="./image/code.png" alt="" class="code">
-    <p>有效期3天</p>
+<p class="title">
+    <span>订单：20190308001</span>
+    <span>修改订单</span>
+</p>
+<div class="card">
+    <p class="txt">订单金额（RMB）</p>
+    <p class="price">3000.00</p>
+    <p class="amount">共计30人/份</p>
 </div>
-<button class="saveBtn" onclick="downloadImg()">保存二维码到手机</button>
+<button class="btn btn1">在线支付</button>
+<button class="btn btn2">线下支付</button>
+<button class="btn btn3">银行转账</button>
 <script src="./js/jquery-3.3.1.min.js"></script>
 <!--<script src="./js/checkLogin.js"></script>-->
 <script src="./config/config.js"></script>
 <script src="./js/toast.js"></script>
-<script src="./js/invite.js"></script>
 </body>
 </html>

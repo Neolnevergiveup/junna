@@ -31,16 +31,17 @@
 <div class="amount">
     <p class="title">购买课程</p>
     <div class="amountInput">
-        <input type="text" value="0">
-        <i class="plus"></i>
-        <i class="reduce"></i>
+        <input type="text" value="0" id="amount">
+        <i class="plus" onclick="plus()"></i>
+        <i class="reduce" onclick="reduce()"></i>
     </div>
     <p class="total">共计：<span>3000.00</span>元</p>
-    <button class="btn">购买</button>
+    <button class="btn" onclick="goPay()">购买</button>
 </div>
 <script src="./js/jquery-3.3.1.min.js"></script>
 <!--<script src="./js/checkLogin.js"></script>-->
 <script src="./config/config.js"></script>
 <script src="./js/toast.js"></script>
+<script src="./js/buy.js"></script>
 </body>
 </html>

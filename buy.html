@@ -15,17 +15,17 @@
 <body>
 <div class="cardWrap">
     <div class="card">
-        <p class="priceTitle">课程价格</p>
-        <p class="price">100</p>
-        <p class="unit">RMB / 人</p>
+        <p class="priceTitle" id="priceTitle">课程价格</p>
+        <p class="price" id="price"></p>
+        <p class="unit" id="unit"></p>
     </div>
 </div>
 <div class="info">
-    <p class="red">温馨提示：</p>
-    <div class="content">
-        <p>购买10-19份9.购</p>
-        <p>购买10-19份9.5折</p>
-        <p>购买10-19份9.5折</p>
+    <p class="red" id="redInfo">温馨提示：</p>
+    <div class="content" id="content">
+        <!--<p>购买10-19份9.购</p>-->
+        <!--<p>购买10-19份9.5折</p>-->
+        <!--<p>购买10-19份9.5折</p>-->
     </div>
 </div>
 <div class="amount">
@@ -35,11 +35,11 @@
         <i class="plus" onclick="plus()"></i>
         <i class="reduce" onclick="reduce()"></i>
     </div>
-    <p class="total">共计：<span>3000.00</span>元</p>
+    <p class="total">共计：<span id="money">0</span>元</p>
     <button class="btn" onclick="goPay()">购买</button>
 </div>
 <script src="./js/jquery-3.3.1.min.js"></script>
-<!--<script src="./js/checkLogin.js"></script>-->
+<script src="./js/checkLogin.js"></script>
 <script src="./config/config.js"></script>
 <script src="./js/toast.js"></script>
 <script src="./js/buy.js"></script>

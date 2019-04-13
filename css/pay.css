@@ -41,7 +41,7 @@ body{
     color: rgb(51,51,51);
     margin-top: .15rem;
 }
-.btn{
+.btns{
     display: block;
     width: 100%;
     height: .54rem;
@@ -64,4 +64,59 @@ body{
     background: #fff;
     border: 0;
     color: rgb(51,51,51);
+}
+.mask{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    display: none;
+}
+.payByCardWin{
+    width: 2.8rem;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    padding: 0 0.1rem .5rem .3rem;
+    -webkit-transform: translate(-50%,  -50%);
+    -moz-transform: translate(-50%,  -50%);
+    -ms-transform: translate(-50%,  -50%);
+    -o-transform: translate(-50%,  -50%);
+    transform: translate(-50%,  -50%);
+}
+.payByCardWin .line{
+    font-size: .16rem;
+    line-height: .25rem;
+}
+.line:first-child{
+    margin-top: .15rem;
+}
+.btnsWrap{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: .4rem;
+    left: 0;
+    bottom: 0;
+    border-top: .01rem solid #ddd;
+}
+.btnsWrap .btn{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:  .16rem;
+}
+.btn:first-child{
+    border-right:.01rem solid #ddd;
+}
+.btn:last-child{
+    color: #26a2ff;
 }

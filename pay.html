@@ -14,20 +14,37 @@
 </head>
 <body>
 <p class="title">
-    <span>订单：20190308001</span>
-    <span>修改订单</span>
+    <span></span>
+    <span onclick="goBackAlter()">修改订单</span>
 </p>
 <div class="card">
     <p class="txt">订单金额（RMB）</p>
-    <p class="price">3000.00</p>
-    <p class="amount">共计30人/份</p>
+    <p class="price" id="price"></p>
+    <p class="amount" id="amount"></p>
 </div>
-<button class="btn btn1">在线支付</button>
-<button class="btn btn2">线下支付</button>
-<button class="btn btn3">银行转账</button>
+<button class="btns btn1" onclick="payOnline()">在线支付</button>
+<button class="btns btn2" onclick="openPayByCardWin()">银行转账</button>
+<div class="mask">
+    <div class="payByCardWin">
+        <p class="line" id="info">联系运营人员进行银行转账</p>
+        <div id="lineWrap">
+            <p class="line">账户名：</p>
+            <p class="line">开户行：</p>
+            <p class="line">银行账号：</p>
+            <p class="line">电话：</p>
+        </div>
+        <div class="btnsWrap">
+            <div class="btn" onclick="closeMask()">取消</div>
+            <div class="btn" onclick="payByCard()">确认</div>
+        </div>
+    </div>
+</div>
 <script src="./js/jquery-3.3.1.min.js"></script>
-<!--<script src="./js/checkLogin.js"></script>-->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script src="./js/message.js"></script>
+<script src="./js/checkLogin.js"></script>
 <script src="./config/config.js"></script>
 <script src="./js/toast.js"></script>
+<script src="./js/pay.js"></script>
 </body>
 </html>

@@ -44,27 +44,27 @@ function payOnline(){
                     signature: res.data.wx.signature,// 必填，签名，见附录1
                     jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，这里只写支付的
                 });
-                // wx.chooseWXPay({
-                //     timestamp: res.data.wx.timeStamp, // 支付签名时间戳
-                //     nonceStr: res.data.wx.nonceStr, // 支付签名随机串，不长于32 位
-                //     package: res.data.wx.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
-                //     signType: res.data.wx.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
-                //     paySign: res.data.paysign, // 支付签名
-                //     success: function (res) {
-                //         //支付成功
-                //         $('body').toast({
-                //             content:'支付成功!',
-                //             duration:2000,
-                //         });
-                //     },
-                //     cancel: function (res) {
-                //         //支付取消
-                //         $('body').toast({
-                //             content:'支付失败!',
-                //             duration:2000,
-                //         });
-                //     }
-                // });
+                wx.chooseWXPay({
+                    timestamp: res.data.wx.timeStamp, // 支付签名时间戳
+                    nonceStr: res.data.wx.nonceStr, // 支付签名随机串，不长于32 位
+                    package: res.data.wx.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+                    signType: res.data.wx.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+                    paySign: res.data.paysign, // 支付签名
+                    success: function (res) {
+                        //支付成功
+                        $('body').toast({
+                            content:'支付成功!',
+                            duration:2000,
+                        });
+                    },
+                    cancel: function (res) {
+                        //支付取消
+                        $('body').toast({
+                            content:'支付失败!',
+                            duration:2000,
+                        });
+                    }
+                });
             } else {
                 $('body').toast({
                     content:'请求失败',

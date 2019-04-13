@@ -18,7 +18,9 @@ function reduce() {
 // 前往支付
 function goPay(){
     var num = parseInt($('#amount').val());
-    window.location.href = './pay.html?num='+num+'&price='+price;
+    if (num) {
+        window.location.href = './pay.html?num='+num+'&price='+price;
+    }
 }
 // 获取url参数
 function getQueryString(name) {

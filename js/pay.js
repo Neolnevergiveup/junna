@@ -19,25 +19,16 @@ function getQueryString(name) {
 }
 // 去重新修改订单
 function goBackAlter() {
-    window.location.href = './buy.html?num='+num;
+    window.location.href = './buy.html?num=' + num;
 }
-// 在线支付
+// 在线支付}
 function payOnline(){
     var url = encodeURIComponent(window.location.href.split('#')[0]);
     $.get(URL + "/buy/order/create?pay_type=wechat_sdk&unit_price="+price+'&url='+url+'&open_id='+localStorage.open_id+'&count='+num+'&total_price='+total, function(res,status){
         if ('success' == status) {
             if (res.code === 0) {
-                console.log(res)
-                console.log({
-                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-                    appId: res.data.wx.appId, // 必填，公众号的唯一标识
-                    timestamp: res.data.wx.timeStamp, // 必填，生成签名的时间戳
-                    nonceStr: res.data.wx.nonceStr, // 必填，生成签名的随机串
-                    signature: res.data.wx.signature,// 必填，签名，见附录1
-                    jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，这里只写支付的
-                })
                 wx.config({
-                    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                    debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                     appId: res.data.wx.appId, // 必填，公众号的唯一标识
                     timestamp: res.data.wx.timeStamp, // 必填，生成签名的时间戳
                     nonceStr: res.data.wx.nonceStr, // 必填，生成签名的随机串
@@ -49,13 +40,16 @@ function payOnline(){
                     nonceStr: res.data.wx.nonceStr, // 支付签名随机串，不长于32 位
                     package: res.data.wx.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
                     signType: res.data.wx.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
-                    paySign: res.data.paysign, // 支付签名
+                    paySign: res.data.wx.paySign, // 支付签名
                     success: function (res) {
                         //支付成功
                         $('body').toast({
                             content:'支付成功!',
                             duration:2000,
                         });
+                        setTimeout(function(){
+                            window.location.hreff = './index.html';
+                        },2000)
                     },
                     cancel: function (res) {
                         //支付取消

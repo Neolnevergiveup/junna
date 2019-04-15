@@ -1,3 +1,3 @@
-function downloadImg(){
-    window.open('./image/code.png');
-}
+// function downloadImg(){
+//     window.open('./image/code.png');
+// }

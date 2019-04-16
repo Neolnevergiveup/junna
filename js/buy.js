@@ -19,6 +19,7 @@ function reduce() {
 function goPay(){
     var num = parseInt($('#amount').val());
     if (num) {
+        sessionStorage.setItem('num', num)
         window.location.href = './pay.html?num='+num+'&price='+price;
     }
 }
@@ -47,7 +48,7 @@ $(function(){
                 }
                 $('#content').html(str)
                 price = parseFloat(res.data.banner.price)
-                var num = getQueryString('num');
+                var num = sessionStorage.num;
                 if (num) {
                     console.log('有num');
                     $('#amount').attr('value', num);

@@ -19,7 +19,7 @@ function getQueryString(name) {
 }
 // 去重新修改订单
 function goBackAlter() {
-    window.location.href = './buy.html?num=' + num;
+    window.location.href = './buy.html';
 }
 // 在线支付}
 function payOnline(){

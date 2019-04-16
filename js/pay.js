@@ -48,7 +48,7 @@ function payOnline(){
                             duration:2000,
                         });
                         setTimeout(function(){
-                            window.location.hreff = './index.html';
+                            window.location.href = './index.html';
                         },2000)
                     },
                     cancel: function (res) {

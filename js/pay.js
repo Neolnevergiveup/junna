@@ -45,11 +45,11 @@ function payOnline(){
                         //支付成功
                         $('body').toast({
                             content:'支付成功!',
-                            duration:2000,
+                            duration:1000,
                         });
                         setTimeout(function(){
                             window.location.href = './index.html';
-                        },2000)
+                        },1000)
                     },
                     cancel: function (res) {
                         //支付取消

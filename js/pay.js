@@ -4,7 +4,7 @@ var total = ''
 $(function(){
     price = getQueryString('price');
     num = getQueryString('num');
-    total = price * num;
+    total = getQueryString('total');
     $('#price').html(total);
     $('#amount').html('共计' + num + '人/份');
 })
@@ -61,7 +61,7 @@ function payOnline(){
                 });
             } else {
                 $('body').toast({
-                    content:'请求失败',
+                    content:res.msg,
                     duration:2000,
                 });
             }

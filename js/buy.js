@@ -1,10 +1,11 @@
 var price = ''
+var totalPrice = 0
 // 加一
 function plus() {
     var num = parseInt($('#amount').val());
     num++;
     $('#amount').attr('value', num)
-    $('#money').html(price * num)
+    cal()
 }
 // 减一
 function reduce() {
@@ -12,15 +13,34 @@ function reduce() {
     num--;
     if (num >= 0) {
         $('#amount').attr('value', num)
-        $('#money').html(price * num)
+        cal()
     }
+}
+// 计算价格
+function cal() {
+    var num = parseInt($('#amount').val());
+    $.get(URL + "/buy/index/getRealPrice?open_id="+localStorage.open_id+"&price="+price+"&count="+num, function(res,status){
+        if ('success' == status) {
+            if (res.code === 0) {
+                totalPrice = parseFloat(res.data.price)
+                $('#money').html(res.data.price)
+            } else {
+                $('body').toast({
+                    content:'价格计算错误',
+                    duration:2000,
+                });
+            }
+        } else {
+            console.log('获取信息失败');
+        }
+    });
 }
 // 前往支付
 function goPay(){
     var num = parseInt($('#amount').val());
     if (num) {
         sessionStorage.setItem('num', num)
-        window.location.href = './pay.html?num='+num+'&price='+price;
+        window.location.href = './pay.html?num='+num+'&price='+price + '&total=' + totalPrice;
     }
 }
 // 获取url参数
@@ -52,7 +72,7 @@ $(function(){
                 if (num) {
                     console.log('有num');
                     $('#amount').attr('value', num);
-                    $('#money').html(num * price);
+                    cal();
                 }
             } else {
                 $('body').toast({

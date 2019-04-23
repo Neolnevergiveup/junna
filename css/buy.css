@@ -78,18 +78,18 @@ body{
     background: url('../image/plus.png') no-repeat center;
     background-size: .24rem;
     right: .15rem;
-    top: .09rem;
+    top: 0;
 }
 .reduce{
     background: url('../image/reduce.png') no-repeat center;
     background-size: .24rem;
     left: .15rem;
-    top: .09rem;
+    top: 0;
 }
 .reduce, .plus{
     position: absolute;
     width: .24rem;
-    height: .24rem;
+    height: 100%;
 }
 .total{
     text-align: center;

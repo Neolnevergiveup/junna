@@ -2,27 +2,34 @@ var price = ''
 var totalPrice = 0
 // 加一
 function plus() {
-    var num = parseInt($('#amount').val());
+    var num = parseInt($('#amount').val()) || 0;
     num++;
-    $('#amount').attr('value', num)
-    cal()
+    $('#amount').val(num)
+    cal(num)
 }
 // 减一
 function reduce() {
-    var num = parseInt($('#amount').val());
+    var num = parseInt($('#amount').val()) || 0;
     num--;
     if (num >= 0) {
-        $('#amount').attr('value', num)
-        cal()
+        $('#amount').val(num)
+        cal(num)
     }
 }
 // 返回首页
 function back(){
     window.location.href = './index.html'
 }
-// 计算价格
-function cal() {
+function change(){
     var num = parseInt($('#amount').val());
+    cal(num)
+}
+// 计算价格
+function cal(num) {
+    if (!num) {
+        $('#amount').val(0)
+        return false;
+    }
     $.get(URL + "/buy/index/getRealPrice?open_id="+localStorage.open_id+"&price="+price+"&count="+num, function(res,status){
         if ('success' == status) {
             if (res.code === 0) {
@@ -65,9 +72,8 @@ $(function(){
                 price = parseFloat(res.data.banner.price)
                 var num = sessionStorage.num;
                 if (num) {
-                    console.log('有num');
-                    $('#amount').attr('value', num);
-                    cal();
+                    $('#amount').val(num);
+                    cal(num);
                 }
             } else {
                 $('body').toast({

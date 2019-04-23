@@ -68,14 +68,8 @@ function getOpenId(code){
         if ('success' == status) {
             if (res.code === 0) {
                 open_id = res.data.open_id;
-            } else if (res.code === 1 && res.msg.indexOf('40163')!=-1) {
-                // 每个code只能请求一次，如果在当前login页面刷新，会导致请求open_id失败,重定向到login，重新请求code
+            } else { // 如果微信报错，就重定向login
                 window.location.href = './login.html';
-            } else {
-                $('body').toast({
-                    content:res.msg,
-                    duration:2000,
-                });
             }
         } else {
             $('body').toast({

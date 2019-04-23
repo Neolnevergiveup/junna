@@ -79,7 +79,7 @@ function getOpenId(code){
             }
         } else {
             $('body').toast({
-                content:'请求行业列表失败',
+                content:'请求open_id失败',
                 duration:2000,
             });
         }

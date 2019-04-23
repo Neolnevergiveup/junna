@@ -43,15 +43,6 @@ function goPay(){
         window.location.href = './pay.html?num='+num+'&price='+price + '&total=' + totalPrice;
     }
 }
-// 获取url参数
-function getQueryString(name) {
-    var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
-    var r = window.location.search.substr(1).match(reg);
-    if (r != null) {
-        return unescape(r[2]);
-    }
-    return null;
-}
 $(function(){
     $.get(URL + "/buy/index/comfirmOrder?open_id="+localStorage.open_id, function(res,status){
         if ('success' == status) {

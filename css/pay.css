@@ -12,6 +12,9 @@ body{
     font-size: .15rem;
     margin: .2rem 0 .1rem 0;
 }
+.back{
+    width: .2rem;
+}
 .card{
     height: 2.3rem;
     background: url('../image/payCardBack.png') no-repeat left bottom;

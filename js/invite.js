@@ -4,6 +4,10 @@
 $(function(){
     getQRCode()
 })
+// 返回首页
+function back(){
+    window.location.href = './index.html'
+}
 // 获取二维码
 function getQRCode () {
     $.get(URL + "/buy/index/fetchApplicationCode?open_id="+localStorage.open_id+'&page=pages/login/login', function(res,status){

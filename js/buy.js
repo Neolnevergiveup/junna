@@ -16,6 +16,10 @@ function reduce() {
         cal()
     }
 }
+// 返回首页
+function back(){
+    window.location.href = './index.html'
+}
 // 计算价格
 function cal() {
     var num = parseInt($('#amount').val());

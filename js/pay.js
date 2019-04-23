@@ -8,6 +8,10 @@ $(function(){
     $('#price').html(total);
     $('#amount').html('共计' + num + '人/份');
 })
+// 返回首页
+function back(){
+    window.location.href = './buy.html'
+}
 // 获取url参数
 function getQueryString(name) {
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');

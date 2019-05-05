@@ -81,11 +81,11 @@ function getOpenId(code){
 }
 // input获取焦点，隐藏按钮
 function hide(){
-    $('.loginWrap').hide()
+    // $('.loginWrap').hide()
 }
 // input失去焦点，显示按钮
 function show(){
-    $('.loginWrap').fadeIn()
+    // $('.loginWrap').fadeIn()
 }
 $(function(){
     // 如果已经有open_id的缓存信息，说明曾经登录过，需要请求后台接口验证open_id当前登录状态；否则获取code，由code获取open_id

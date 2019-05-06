@@ -33,6 +33,7 @@ textarea {
 }
 /*去掉苹果的默认UI来渲染按钮*/
 input,button,select{
+    /*去掉苹果input的上阴影*/
     border-radius:0;
     appearance:none;
     -moz-appearance:none;

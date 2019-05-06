@@ -28,7 +28,6 @@ function change(){
 function cal(num) {
     if (!num) {
         $('#amount').val(0)
-        return false;
     }
     $.get(URL + "/buy/index/getRealPrice?open_id="+localStorage.open_id+"&price="+price+"&count="+num, function(res,status){
         if ('success' == status) {

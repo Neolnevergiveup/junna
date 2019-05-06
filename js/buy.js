@@ -22,14 +22,17 @@ function back(){
 }
 function change(){
     var num = parseInt($('#amount').val());
+    $('#amount').val(num)
     cal(num)
 }
 // 计算价格
 function cal(num) {
+    var amount = num
     if (!num) {
         $('#amount').val(0)
+        amount = 0
     }
-    $.get(URL + "/buy/index/getRealPrice?open_id="+localStorage.open_id+"&price="+price+"&count="+num, function(res,status){
+    $.get(URL + "/buy/index/getRealPrice?open_id="+localStorage.open_id+"&price="+price+"&count="+amount, function(res,status){
         if ('success' == status) {
             if (res.code === 0) {
                 totalPrice = parseFloat(res.data.price)

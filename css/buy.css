@@ -78,20 +78,20 @@ body{
     color: rgb(153,153,153);
 }
 .plus{
-    background: url('../image/plus.png') no-repeat center;
+    background: url('../image/plus.png') no-repeat left center;
     background-size: .24rem;
-    right: .15rem;
+    right: 0;
     top: 0;
 }
 .reduce{
-    background: url('../image/reduce.png') no-repeat center;
+    background: url('../image/reduce.png') no-repeat right center;
     background-size: .24rem;
-    left: .15rem;
+    left: 0;
     top: 0;
 }
 .reduce, .plus{
     position: absolute;
-    width: .24rem;
+    width: .39rem;
     height: 100%;
 }
 .total{

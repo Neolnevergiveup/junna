@@ -35,7 +35,7 @@
 
 		    var box = '';   //消息元素
 		    var defaults = {
-		    	position:  			  "absolute", 				//不是body的话就absolute
+		    	position:  			  "fixed", 				//不是body的话就absolute
 		    	animateIn:  		  "fadeIn",					//进入的动画
 		    	animateOut: 		  "fadeOut",				//结束的动画
 				padding:              "10px 20px",              //padding

@@ -40,17 +40,10 @@ function save(){
     $($('.form2').serializeArray()).each(function(index, item){
         params[item.name] = item.value
     })
-    var str = $('#expressArea').val().ResetBlank();
-    var cityList = str.split(' ');
-    var city1 = cityList[cityList.length-2];
-    var country1 = cityList[cityList.length-1];
-    if (cityList.length === 3) {
-        var province1 = cityList[0];
-    }
     Object.assign(params, {
-        province: province1,
-        city: city1,
-        county: country1
+        province: provinceName,
+        city: cityName,
+        county: coutyName
     })
     // 省市区手动切
     $.post(URL + "/buy/index/doregist", params, function(res, status){
@@ -76,4 +69,108 @@ function save(){
 function jumpLogin(){
     var timestamp = Date.parse(new Date());
     window.location.href = './login.html?time=' + timestamp;
+}
+// 定义城市选择需要的变量
+var provinceName = ''
+var cityName = ""
+var coutyName = ""
+var nowSel = '' // 当前是选择省、市、区的哪一种
+// 开始选择城市
+function handleSel(){
+    $('#cityName').html('请选择公司地址')
+    $('#mask').css("display", 'block')
+    $('.selectCityWrap .back').css('display', 'none')
+    // 设置list为省列表
+    setProvinceList()
+    $('#cityList').scrollTop(0)
+}
+// 设置list为省列表
+function setProvinceList(){
+    nowSel = '省'
+    var str = ''
+    for (var i = 0; i < province.length; i++) {
+        str += "<li onclick='selProvince(\"" + province[i] + "\")'>" + province[i] + "</li>"
+    }
+    $('#cityList').html(str);
+}
+// 设置list为第i个省的city列表
+function setCityList(j) {
+    nowSel = '市'
+    var str = ''
+    for (var i = 0; i < city[j].length; i++) {
+        str += "<li onclick='selCity(\"" + city[j][i] + "\")'>" + city[j][i] + "</li>"
+    }
+    $('#cityList').html(str);
+}
+// 设置list为第a省第b城市的county列表
+function setCountyList(a, b){
+    nowSel = '区'
+    var list = district[a][b]
+    var str = ''
+    for (var i = 0; i < list.length; i++) {
+        str += "<li onclick='selCouty(\"" + list[i] + "\")'>" + list[i] + "</li>"
+    }
+    $('#cityList').html(str);
+}
+// 选中某个省
+function selProvince(name){
+    provinceName = name
+     $('.selectCityWrap .back').css('display', 'block')
+     // 查找当前选中第几个省
+     var i = getProvinceIndex(name)
+     setCityList(i)
+     $('#cityList').scrollTop(0)
+}
+// 选中某个城市
+function selCity(name){
+    cityName = name
+    var provinceIndex = getProvinceIndex(provinceName)
+    var cityIndex = getCityIndex(name)
+    // 设置list为第i省第j城市的county列表
+    setCountyList(provinceIndex, cityIndex)
+    $('#cityList').scrollTop(0)
+}
+// 
+function selCouty(name){
+    coutyName = name
+    $('#mask').css('display', 'none')
+    $('#cityName').html(provinceName + '' + cityName + '' + coutyName)
+}
+// 查找当前选中第几个省
+function getProvinceIndex(name){
+    for(var i = 0; i < province.length; i++) {
+        if (province[i] == name) {
+            return i
+        }
+    }
+}
+// 查找当前选中第几个城市
+function getCityIndex(name){
+    var provinceIndex = getProvinceIndex(provinceName)
+    if (typeof(provinceIndex) == 'number') {
+        for (var i = 0; i < city[provinceIndex].length; i++) {
+            if (cityName == city[provinceIndex][i]) {
+                return i
+            }
+        }
+    } else {
+        console.log('找不到province下标')
+    }
+}
+// 关闭选择地区弹窗
+function closeMask(){
+    $('#mask').css('display', 'none')
+    provinceName = ''
+    cityName = ""
+    coutyName = ""
+}
+// 根据nowSel返回上一层
+function goBack(){
+    if (nowSel == '市') {
+        setProvinceList()
+    } else if (nowSel == '区') {
+        var i = getProvinceIndex(provinceName)
+        setCityList(i)
+    }
+     $('#cityList').scrollTop(0)
 }

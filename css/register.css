@@ -83,3 +83,75 @@ select{
     color: rgb(103, 136, 241);
     text-decoration: none;
 }
+/*选择城市功能*/
+.selectCity{
+    height: .44rem;
+    width: 100%;
+    border-radius: .22rem;
+    padding: 0 .4rem 0 .2rem;
+    font-size: .15rem;
+    margin-bottom: .1rem;
+    border: .01rem solid #f2f2f2;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+}
+#cityName{
+    line-height: .44rem;
+}
+#mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+.selectCityWrap{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+}
+.selectCityWrap header{
+    padding: 0 .35rem;
+    height: .45rem;
+    border-bottom: 1px solid #e2e2e2;
+    position: relative;
+}
+.selectCityWrap header h3{
+    line-height: .45rem;
+    font-weight: normal;
+    text-align: center;
+}
+.selectCityWrap header .back{
+    position: absolute;
+    width: .35rem;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: url(../image/back.png) no-repeat center;
+    background-size: .1rem auto;
+}
+.selectCityWrap header .close{
+    position: absolute;
+    width: .35rem;
+    height: 100%;
+    right: 0;
+    top: 0;
+    background: url(../image/close-area.png) no-repeat center;
+    background-size: .15rem auto;
+}
+/*城市选择列表*/
+#cityList{
+    height: 2.5rem;
+    overflow: auto;
+}
+#cityList li{
+    height: .45rem;
+    line-height: .45rem;
+    border-bottom: 1px solid #e2e2e2;
+    padding-left: .1rem;
+}

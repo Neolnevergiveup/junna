@@ -148,6 +148,7 @@ select{
 #cityList{
     height: 2.5rem;
     overflow: auto;
+    -webkit-overflow-scrolling : touch;
 }
 #cityList li{
     height: .45rem;

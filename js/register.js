@@ -168,6 +168,7 @@ function closeMask(){
 function goBack(){
     if (nowSel == '市') {
         setProvinceList()
+        $('.selectCityWrap .back').css('display', 'none')
     } else if (nowSel == '区') {
         var i = getProvinceIndex(provinceName)
         setCityList(i)

@@ -35,7 +35,7 @@ body{
 .every_title{
     font-size: .21rem;
     color: rgb(100,146,255);
-    padding: .1rem 0 .15rem 0;
+    padding: .15rem 0 .15rem 0;
 }
 .content{
     line-height: .25rem;

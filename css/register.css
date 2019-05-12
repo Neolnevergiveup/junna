@@ -28,7 +28,7 @@ input{
     border: .01rem solid #f2f2f2;
     border-radius: .22rem;
     padding-left: .2rem;
-    font-size: .13rem;
+    font-size: .15rem;
     margin-bottom: .1rem;
 }
 select{
@@ -37,7 +37,7 @@ select{
     border: .01rem solid #f2f2f2;
     border-radius: .22rem;
     padding-left: .2rem;
-    font-size: .13rem;
+    font-size: .15rem;
     margin-bottom: .1rem;
     background: #fff;
     appearance:none;
@@ -70,11 +70,11 @@ select{
     border-radius: .27rem;
     color: #fff;
     margin-top: .3rem;
-    font-size: .13rem;
+    font-size: .15rem;
 }
 .haveAccount{
     text-align: center;
-    font-size: .13rem;
+    font-size: .15rem;
     color: rgb(102, 102, 102);
     margin: .2rem 0;
     line-height: .3rem;
@@ -89,7 +89,7 @@ select{
     width: 100%;
     border-radius: .22rem;
     padding: 0 .4rem 0 .2rem;
-    font-size: .13rem;
+    font-size: .15rem;
     margin-bottom: .1rem;
     border: .01rem solid #f2f2f2;
     position: relative;
@@ -117,12 +117,12 @@ select{
 }
 .selectCityWrap header{
     padding: 0 .35rem;
-    height: .45rem;
+    height: .4rem;
     border-bottom: 1px solid #e2e2e2;
     position: relative;
 }
 .selectCityWrap header h3{
-    line-height: .45rem;
+    line-height: .4rem;
     font-weight: normal;
     text-align: center;
 }
@@ -151,8 +151,8 @@ select{
     -webkit-overflow-scrolling : touch;
 }
 #cityList li{
-    height: .45rem;
-    line-height: .45rem;
+    height: .4rem;
+    line-height: .4rem;
     border-bottom: 1px solid #e2e2e2;
     padding-left: .1rem;
 }
